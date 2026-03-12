@@ -15,7 +15,9 @@ app = FastAPI(title=settings.app_name)
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=settings.backend_cors_origins,
+    # For the assignment demo, allow all origins so the
+    # Vercel frontend can call the Railway backend without CORS issues.
+    allow_origins=["*"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
