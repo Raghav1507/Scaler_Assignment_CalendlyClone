@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  @apply text-slate-900 antialiased;
+  /* Keep a simple soft gradient; animated 3D background is handled via three.js on home page */
+  background: linear-gradient(135deg, #e0f2fe 0%, #eef2ff 40%, #f9fafb 100%);
+}
+
+.glass-panel {
+  @apply border border-slate-200 backdrop-blur-xl rounded-3xl shadow-soft-xl;
+  /* Premium subtle gradient for main content panels */
+  background: radial-gradient(circle at top left, #e0f2fe 0%, #f5f3ff 40%, #fdf2ff 75%, #ffffff 100%);
+}
+
+.nav-pill {
+  @apply inline-flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-medium hover:bg-slate-100 transition-colors;
+}
+
+
