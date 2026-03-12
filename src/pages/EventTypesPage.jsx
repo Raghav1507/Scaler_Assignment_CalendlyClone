@@ -19,7 +19,7 @@ export default function EventTypesPage() {
   const [error, setError] = useState("");
 
   const load = () =>
-    api.get("/event-types").then((res) => setEventTypes(res.data)).catch(() => {});
+    api.get("/event-types/").then((res) => setEventTypes(res.data)).catch(() => {});
 
   useEffect(() => {
     load();
@@ -44,7 +44,7 @@ export default function EventTypesPage() {
     setLoading(true);
     setError("");
     try {
-      await api.post("/event-types", { ...form, custom_questions: [] });
+      await api.post("/event-types/", { ...form, custom_questions: [] });
       setForm(emptyForm);
       await load();
     } catch (err) {

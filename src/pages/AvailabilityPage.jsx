@@ -27,7 +27,7 @@ export default function AvailabilityPage() {
   const [saving, setSaving] = useState(false);
 
   useEffect(() => {
-    api.get("/event-types").then((res) => {
+    api.get("/event-types/").then((res) => {
       setEventTypes(res.data);
       if (res.data.length > 0) {
         setSelectedEventId(String(res.data[0].id));

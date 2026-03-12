@@ -9,7 +9,7 @@ export default function Dashboard() {
   const [cursorPos, setCursorPos] = useState({ x: 0, y: 0 });
 
   useEffect(() => {
-    api.get("/event-types").then((res) => setEventTypes(res.data)).catch(() => {});
+    api.get("/event-types/").then((res) => setEventTypes(res.data)).catch(() => {});
   }, []);
 
   return (

@@ -64,7 +64,7 @@ export default function PublicBookingPage() {
 
   useEffect(() => {
     api
-      .get("/event-types")
+      .get("/event-types/")
       .then((res) => {
         const ev = res.data.find((e) => e.slug === slug);
         setEventType(ev || null);
